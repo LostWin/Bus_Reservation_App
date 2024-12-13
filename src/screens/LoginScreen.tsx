@@ -1,29 +1,25 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { RouteProp } from '@react-navigation/native';
-import { RootStackParamList } from '../types';
 
-type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Login'>;
-type LoginScreenRouteProp = RouteProp<RootStackParamList, 'Login'>;
 
-type Props = {
-  navigation: LoginScreenNavigationProp;
-  route: LoginScreenRouteProp;
-};
 
-const LoginScreen: React.FC<Props> = ({ navigation }) => {
+const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', { username, password });
+      const response = await axios.post('http://10.0.2.2:3000/auth/login', { username, password });
+      const { token, role } = response.data;
       Alert.alert('Login successful');
-      navigation.navigate('Itineraries');
+      if (role === 'client') {
+        navigation.navigate('TabNavigator');
+      } else if (role === 'agency') {
+        navigation.navigate('Accueil');
+      }
     } catch (error) {
-      Alert.alert('Login failed');
+      Alert.alert('Login failed', error.message);
     }
   };
 

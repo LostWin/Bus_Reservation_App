@@ -1,16 +1,23 @@
 export type RootStackParamList = {
-    Home: undefined;
-    Login: undefined;
-    Signup: undefined;
-    Itineraries: undefined;
-    Reservation: { itineraryId: number };
+  SeatBooking: { PosterImage: string };
+  Ticket: {
+    seatArray: number[];
+    time: string;
+    date: number;
+    ticketImage: string;
   };
+  // Ajoutez d'autres écrans ici
+};
+
   
-  export interface Itinerary {
-    id: number;
-    departureTime: string; // Change to string if you're using ISO date strings
+  export type Itinerary = {
+    id: string;
+    title: string;
+    departureTime: string;
     arrivalTime: string;
     destination: string;
-    driverName: string;
-  }
+    imagePath: string;
+  };
+
+  
   
