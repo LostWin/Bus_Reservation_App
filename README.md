@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
@@ -77,3 +78,7 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+=======
+# Bus_Reservation_App
+It’s an application for travel agencies looking to advertise and digitize their business. It allows customers to view all possible itineraries for the upcoming week and book their tickets with the respective agency. The application consists of two modules: one for the agency and another for the client.
+>>>>>>> 4279085bff41019a508776d5640687e628c6ccbf
